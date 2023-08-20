@@ -31,35 +31,35 @@ namespace proyectoProgra6App.Views
             PkrUserRole.ItemsSource = await viewModel.GetUserRolesAsync();
         }
 
-        //    private async void BtnAdd_Clicked(object sender, EventArgs e)
-        //    {
-        //        //capturar el rol que se haya seleccionado en el picker 
-        //        UsuarioRol SelectedUserRole = PkrUserRole.SelectedItem as UsuarioRol;
+        private async void BtnAdd_Clicked(object sender, EventArgs e)
+        {
+            //capturar el rol que se haya seleccionado en el picker 
+            UsuarioRol SelectedUserRole = PkrUserRole.SelectedItem as UsuarioRol;
 
-        //        bool R = await viewModel.AddUserAsync(TxtEmail.Text.Trim(),
-        //                                              TxtPassword.Text.Trim(),
-        //                                              TxtName.Text.Trim(),
-        //                                              TxtBackUpEmail.Text.Trim(),
-        //                                              TxtPhoneNumber.Text.Trim(),
-        //                                              TxtAddress.Text.Trim(),
-        //                                              SelectedUserRole.IdUsuarioRol);
+            bool R = await viewModel.AddUserAsync(TxtEmail.Text.Trim(),
+                                                  TxtPassword.Text.Trim(),
+                                                  TxtName.Text.Trim(),
+                                                  TxtBackUpEmail.Text.Trim(),
+                                                  TxtPhoneNumber.Text.Trim(),
+                                                  TxtAddress.Text.Trim(),
+                                                  SelectedUserRole.IdUsuarioRol);
 
-        //        if (R)
-        //        {
-        //            await DisplayAlert(":)", "User created Ok!", "OK");
-        //            await Navigation.PopAsync();
-        //        }
-        //        else
-        //        {
-        //            await DisplayAlert(":(", "Something went wrong...", "OK");
-        //        }
+            if (R)
+            {
+                await DisplayAlert(":)", "Usuario creado corecctamente!", "OK");
+                await Navigation.PopAsync();
+            }
+            else
+            {
+                await DisplayAlert(":(", "Algo salio mal..", "OK");
+            }
 
-        //    }
+        }
 
-        //    private async void BtnCancel_Clicked(object sender, EventArgs e)
-        //    {
-        //        await Navigation.PopAsync();
-        //    }
-        //}
+        private async void BtnCancel_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+        
     }
 }

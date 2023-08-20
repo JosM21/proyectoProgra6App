@@ -14,7 +14,24 @@ namespace proyectoProgra6App.Views
 	{
 		public StartPage ()
 		{
-			InitializeComponent ();
-		}
-	}
+            InitializeComponent();
+
+            LoadUserName();
+        }
+
+        private void LoadUserName()
+        {
+            LblUserName.Text = GlobalObjects.MiUsuarioLocal.Nombre.ToUpper();
+        }
+
+        //private async void BtnUserManagment_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new UserManagmentPage());
+        //}
+
+        //private async void BtnProtocolManagment_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new ProtocolsListPage());
+        //}
+    }
 }

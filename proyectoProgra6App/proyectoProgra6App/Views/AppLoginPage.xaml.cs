@@ -54,13 +54,11 @@ namespace proyectoProgra6App.Views
 
                     bool R = await viewModel.UserAccessValidation(username, password);
 
-
-
                     if (R)
                     {
 
 
-                        //GlobalObjects.MyLocalUser = await viewModel.GetUserDataAsync(TxtUserName.Text.Trim());
+                        GlobalObjects.MiUsuarioLocal = await viewModel.GetUserDataAsync(TxtUserName.Text.Trim());
 
                         await Navigation.PushAsync(new StartPage());
                         return;

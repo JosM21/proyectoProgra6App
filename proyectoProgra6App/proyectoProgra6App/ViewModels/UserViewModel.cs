@@ -14,43 +14,43 @@ namespace proyectoProgra6App.ViewModels
 
         public UsuarioRol MiUsuarioRol { get; set; }
 
-        //public UserDTO MyUserDTO { get; set; }
+        public UsuarioDTO MiUsuarioDTO { get; set; }
 
         public UserViewModel()
         {
             MiUsuario = new Usuario();
             MiUsuarioRol = new UsuarioRol();
-            //MyUserDTO = new UserDTO();
+            MiUsuarioDTO = new UsuarioDTO();
         }
 
 
 
 
-        //public async Task<UserDTO> GetUserDataAsync(string pEmail)
-        //{
-        //    if (IsBusy) return null;
-        //    IsBusy = true;
+        public async Task<UsuarioDTO> GetUserDataAsync(string pEmail)
+        {
+            if (IsBusy) return null;
+            IsBusy = true;
 
-        //    try
-        //    {
-        //        UserDTO userDTO = new UserDTO();
+            try
+            {
+                UsuarioDTO userDTO = new UsuarioDTO();
 
-        //        userDTO = await MyUserDTO.GetUserInfo(pEmail);
+                userDTO = await MiUsuarioDTO.GetUserInfo(pEmail);
 
-        //        if (userDTO == null) return null;
+                if (userDTO == null) return null;
 
-        //        return userDTO;
+                return userDTO;
 
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return null;
-        //        throw;
-        //    }
-        //    finally { IsBusy = false; }
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+            finally { IsBusy = false; }
 
 
-        //}
+        }
 
 
         //public async Task<bool> UpdateUser(UserDTO pUser)
@@ -142,7 +142,7 @@ namespace proyectoProgra6App.ViewModels
 
             try
             {
-                // MyUser = new User();
+                MiUsuario = new Usuario();
 
                 MiUsuario.Email = pEmail;
                 MiUsuario.Contrasenia = pPassword;

@@ -80,7 +80,7 @@ namespace proyectoProgra6App.Models
         {
             try
             {
-                string RouteSufix = string.Format("Users");
+                string RouteSufix = string.Format("Usuarios");
                 
                 string URL = Services.APIConnection.ProductionPrefixURL + RouteSufix;
 
