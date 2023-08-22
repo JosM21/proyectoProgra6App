@@ -10,16 +10,16 @@ namespace proyectoProgra6App.Models
 {
     public class UsuarioRol
     {
+        public RestRequest Request { get; set; }
         public int IdUsuarioRol { get; set; }
         public string Descripcion { get; set; } = null!;
 
-        public RestRequest Request { get; set; }
 
         public async Task<List<UsuarioRol>> GetAllUserRolesAsync()
         {
             try
             {
-                string RouteSufix = string.Format("UserRoles");
+                string RouteSufix = string.Format("UsuarioRols");
                
                 string URL = Services.APIConnection.ProductionPrefixURL + RouteSufix;
 

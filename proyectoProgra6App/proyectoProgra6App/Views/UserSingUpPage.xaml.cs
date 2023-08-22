@@ -16,6 +16,8 @@ namespace proyectoProgra6App.Views
     {
 
         UserViewModel viewModel;
+
+
         public UserSingUpPage()
         {
             InitializeComponent();

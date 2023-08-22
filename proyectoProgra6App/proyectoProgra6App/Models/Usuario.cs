@@ -12,6 +12,8 @@ namespace proyectoProgra6App.Models
     public class Usuario
     {
 
+        [JsonIgnore]
+
         public RestRequest Request { get; set; }
 
         public Usuario()
@@ -52,11 +54,13 @@ namespace proyectoProgra6App.Models
                 
                 Request.AddHeader(Services.APIConnection.ApiKeyName, Services.APIConnection.ApiKeyValue);
 
-               
+                Request.AddHeader(GlobalObjects.ContentType, GlobalObjects.MimeType);
+
                 RestResponse response = await client.ExecuteAsync(Request);
 
                
                 HttpStatusCode statusCode = response.StatusCode;
+
 
                 if (statusCode == HttpStatusCode.OK)
                 {

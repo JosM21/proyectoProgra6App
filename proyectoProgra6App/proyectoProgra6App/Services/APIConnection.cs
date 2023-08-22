@@ -8,8 +8,8 @@ namespace proyectoProgra6App.Services
     {
 
 
-        public static string ProductionPrefixURL = "http://192.168.0.10:45455/api/";
-        public static string TestingPrefixURL = "http://192.168.0.10:45455/api/";
+        public static string ProductionPrefixURL = "http://192.168.0.4:45455/api/";
+        public static string TestingPrefixURL = "http://192.168.0.4:45455/api/";
 
         public static string ApiKeyName = "Progra6ApiKey";
 

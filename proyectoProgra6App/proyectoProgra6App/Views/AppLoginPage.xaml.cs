@@ -38,27 +38,27 @@ namespace proyectoProgra6App.Views
 
         private async void BtnLogin_Clicked(object sender, EventArgs e)
         {
-
             if (TxtUserName.Text != null && !string.IsNullOrEmpty(TxtUserName.Text.Trim()) &&
-               TxtPassword.Text != null && !string.IsNullOrEmpty(TxtPassword.Text.Trim()))
+                TxtPassword.Text != null && !string.IsNullOrEmpty(TxtPassword.Text.Trim()))
             {
                 try
                 {
 
-                    UserDialogs.Instance.ShowLoading("Cargando...");
+                    UserDialogs.Instance.ShowLoading("Checking User Access...");
                     await Task.Delay(2000);
-
 
                     string username = TxtUserName.Text.Trim();
                     string password = TxtPassword.Text.Trim();
 
                     bool R = await viewModel.UserAccessValidation(username, password);
 
+
+
                     if (R)
                     {
 
-
                         GlobalObjects.MiUsuarioLocal = await viewModel.GetUserDataAsync(TxtUserName.Text.Trim());
+
 
                         await Navigation.PushAsync(new StartPage());
                         return;
@@ -66,7 +66,7 @@ namespace proyectoProgra6App.Views
                     }
                     else
                     {
-                        await DisplayAlert("Acceso denegado", "Usuario o contraseña incorrectos", "OK");
+                        await DisplayAlert("User Access Denied", "User or Password are incorrect", "OK");
                         return;
                     }
 
@@ -87,9 +87,11 @@ namespace proyectoProgra6App.Views
             }
             else
             {
-                await DisplayAlert("Datos requeridos", "Ususario y contraseña requeridoS...", "OK");
+                await DisplayAlert("Data required", "Username and Password are required...", "OK");
                 return;
             }
+
+
 
 
         }

@@ -21,17 +21,18 @@ namespace proyectoProgra6App.Views
 
         private void LoadUserName()
         {
-            LblUserName.Text = GlobalObjects.MiUsuarioLocal.Nombre.ToUpper();
+            LblUserName.Text = GlobalObjects.MiUsuarioLocal.Name.ToUpper();
         }
 
-        //private async void BtnUserManagment_Clicked(object sender, EventArgs e)
-        //{
-        //    await Navigation.PushAsync(new UserManagmentPage());
-        //}
+        private async void BtnUserManagment_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserManagmentPage());
+        }
 
-        //private async void BtnProtocolManagment_Clicked(object sender, EventArgs e)
-        //{
-        //    await Navigation.PushAsync(new ProtocolsListPage());
-        //}
+        private async void Cliente_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ClienteManagmentPage());
+
+        }
     }
 }

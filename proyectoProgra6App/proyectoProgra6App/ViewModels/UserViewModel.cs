@@ -53,32 +53,38 @@ namespace proyectoProgra6App.ViewModels
         }
 
 
-        //public async Task<bool> UpdateUser(UserDTO pUser)
-        //{
-        //    if (IsBusy) return false;
-        //    IsBusy = true;
+        public async Task<bool> UpdateUser(UsuarioDTO pUser)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
 
-        //    try
-        //    {
-        //        MyUserDTO = pUser;
+            try
+            {
+                MiUsuarioDTO = pUser;
 
-        //        bool R = await MyUserDTO.UpdateUserAsync();
+                bool R = await MiUsuarioDTO.UpdateUserAsync();
 
-        //        return R;
+                return R;
 
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //        throw;
-        //    }
-        //    finally { IsBusy = false; }
-        //}
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            finally { IsBusy = false; }
+        }
 
 
         public async Task<bool> UserAccessValidation(string pEmail, string pPassword)
         {
-           
+            //debemos poder controlar que no se ejecute la operación más de una vez 
+            //en este caso hay una funcionalidad pensada para eso en BaseViewModel que 
+            //fue heredada al definir esta clase. 
+            //Se usará una propiedad llamada "IsBusy" para indicar que está en proceso de ejecución
+            //mientras su valor sea verdadero 
+
+            //control de bloqueo de funcionalidad 
             if (IsBusy) return false;
             IsBusy = true;
 

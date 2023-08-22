@@ -13,7 +13,7 @@ namespace proyectoProgra6App
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+          //  DependencyService.Register<MockDataStore>();
             MainPage = new NavigationPage(new AppLoginPage());
         }
 

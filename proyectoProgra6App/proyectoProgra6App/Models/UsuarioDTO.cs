@@ -14,17 +14,18 @@ namespace proyectoProgra6App.Models
         [JsonIgnore]
         public RestRequest Request { get; set; }
 
-        public int IDUsuario { get; set; }
-        public string Correo { get; set; } = null!;
-        public string Contrasennia { get; set; } = null!;
-        public string Nombre { get; set; } = null!;
-        public string CorreoRespaldo { get; set; } = null!;
-        public string Telefono { get; set; } = null!;
-        public string? Direccion { get; set; }
-        public bool? Activo { get; set; }
-        public bool? EstaBloqueado { get; set; }
+        public int IdUser { get; set; }
+        public string Email { get; set; } = null!;
+        public string Password { get; set; } = null!;
+        public string Name { get; set; } = null!;
+        public string backupEmail { get; set; } = null!;
+        public string Phone { get; set; } = null!;
+        public string? Address { get; set; }
+        public bool? Active { get; set; }
+        public bool? isBlocked { get; set; }
         public int IDRol { get; set; }
-        public string DescripcionRol { get; set; } = null!;
+        public string DescriptionRol { get; set; } = null!;
+
 
         //FUNCIONES+
         public async Task<UsuarioDTO> GetUserInfo(string PEmail)
@@ -32,7 +33,7 @@ namespace proyectoProgra6App.Models
 
             try
             {
-                string RouteSufix = string.Format("Users/GetUserInfoByEmail?Pemail={0}", PEmail);
+                string RouteSufix = string.Format("Usuarios/GetUserInfoByEmail?Pemail={0}", PEmail);
                 //armamos la ruta completa al endpoint en el API 
                 string URL = Services.APIConnection.ProductionPrefixURL + RouteSufix;
 
@@ -42,6 +43,7 @@ namespace proyectoProgra6App.Models
 
                 //agregamos mecanismo de seguridad, en este caso API key
                 Request.AddHeader(Services.APIConnection.ApiKeyName, Services.APIConnection.ApiKeyValue);
+
                 Request.AddHeader(GlobalObjects.ContentType, GlobalObjects.MimeType);
 
                 //ejecutar la llamada al API 
@@ -52,12 +54,7 @@ namespace proyectoProgra6App.Models
 
                 if (statusCode == HttpStatusCode.OK)
                 {
-                    //en el api diseñamos el end point de forma que retorne un list<UserDTO>
-                    //pero esta función retorna solo UN objeto de UserDTO, por lo tanto 
-                    //debemos seleccionar de la lista el item con el index 0. 
 
-                    //esto puede llegar a servir para muchos propósitos donde un api retorna uno o muchos registro
-                    //pero necesitamos solo uno de ellos 
 
                     var list = JsonConvert.DeserializeObject<List<UsuarioDTO>>(response.Content);
 
@@ -83,7 +80,7 @@ namespace proyectoProgra6App.Models
         {
             try
             {
-                string RouteSufix = string.Format("Users/{0}", this.IDUsuario);
+                string RouteSufix = string.Format("Usuarios/{0}", this.IdUser);
                 //armamos la ruta completa al endpoint en el API 
                 string URL = Services.APIConnection.ProductionPrefixURL + RouteSufix;
 
@@ -100,7 +97,7 @@ namespace proyectoProgra6App.Models
                 //json al API
 
                 string SerializedModel = JsonConvert.SerializeObject(this);
-                //agregamos el objeto serializado el el cuuerpo del request. 
+                //agregamos el objeto serializado el el cuerpo del request. 
                 Request.AddBody(SerializedModel, GlobalObjects.MimeType);
 
                 //ejecutar la llamada al API 
