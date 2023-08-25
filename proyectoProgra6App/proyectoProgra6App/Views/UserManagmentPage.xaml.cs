@@ -132,5 +132,10 @@ namespace proyectoProgra6App.Views
         {
             await Navigation.PopAsync();
         }
+
+        private void BtnVer_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

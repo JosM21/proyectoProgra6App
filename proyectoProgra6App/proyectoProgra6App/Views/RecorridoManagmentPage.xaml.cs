@@ -11,48 +11,47 @@ using Xamarin.Forms.Xaml;
 namespace proyectoProgra6App.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ClienteManagmentPage : ContentPage
+    public partial class RecorridoManagmentPage : ContentPage
     {
-
-        ClienteViewModel viewModel;
-        public ClienteManagmentPage()
+        RecorridoViewModel viewModel;
+        public RecorridoManagmentPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ClienteViewModel();
+            BindingContext = viewModel = new RecorridoViewModel();
         }
 
         private async void BtnAdd_Clicked(object sender, EventArgs e)
         {
-
-            bool R = await viewModel.AddClienteAsync(TxtCedula.Text.Trim(),
-                                                 TxtEmail.Text.Trim(),
-                                                 TxtName.Text.Trim(),
-                                                 TxtFechaN.Text.Trim(),
-                                                 TxtTelefono.Text.Trim(),
-                                                 TxtDireccion.Text.Trim());
+            bool R = await viewModel.AddRecorridoAsync(TxtFecha.Text.Trim(),
+                                                       TxtHoraS.Text.Trim(),
+                                                       TxtLugar.Text.Trim(),
+                                                       TxtCosto.Text.Trim());
 
             if (R)
             {
-                await DisplayAlert(":)", "Usuario creado corecctamente!", "OK");
+                await DisplayAlert(":)", "Recorrido creado corecctamente!", "OK");
                 await Navigation.PopAsync();
+
+
             }
             else
             {
                 await DisplayAlert(":(", "Algo salio mal..", "OK");
             }
 
+
+
         }
 
         private async void BtnCancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
-
         }
 
         private async void BtnVer_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ClienteViewPage());
+            await Navigation.PushAsync(new RecorridoViewPage());
         }
     }
 }

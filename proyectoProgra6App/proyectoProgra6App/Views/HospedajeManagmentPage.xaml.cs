@@ -11,30 +11,29 @@ using Xamarin.Forms.Xaml;
 namespace proyectoProgra6App.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ClienteManagmentPage : ContentPage
+    public partial class HospedajeManagmentPage : ContentPage
     {
 
-        ClienteViewModel viewModel;
-        public ClienteManagmentPage()
+        ViajeViewModel viewModel;
+        public HospedajeManagmentPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ClienteViewModel();
+            BindingContext = viewModel = new ViajeViewModel();
         }
+
+
+
 
         private async void BtnAdd_Clicked(object sender, EventArgs e)
         {
-
-            bool R = await viewModel.AddClienteAsync(TxtCedula.Text.Trim(),
-                                                 TxtEmail.Text.Trim(),
-                                                 TxtName.Text.Trim(),
-                                                 TxtFechaN.Text.Trim(),
-                                                 TxtTelefono.Text.Trim(),
-                                                 TxtDireccion.Text.Trim());
+            bool R = await viewModel.AddHospedajeAsyncV(TxtNombreH.Text.Trim(),
+                                                       TxtUbicacion.Text.Trim(),
+                                                       TxtTelefono.Text.Trim());
 
             if (R)
             {
-                await DisplayAlert(":)", "Usuario creado corecctamente!", "OK");
+                await DisplayAlert(":)", "Hospedaje creado corecctamente!", "OK");
                 await Navigation.PopAsync();
             }
             else
@@ -52,7 +51,9 @@ namespace proyectoProgra6App.Views
 
         private async void BtnVer_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ClienteViewPage());
+            await Navigation.PushAsync(new HospedajeViewPage());
         }
     }
+
+
 }

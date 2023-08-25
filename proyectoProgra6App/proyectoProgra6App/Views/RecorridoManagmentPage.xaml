@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="proyectoProgra6App.Views.ClienteManagmentPage">
+             x:Class="proyectoProgra6App.Views.RecorridoManagmentPage">
     <ContentPage.Content>
         <StackLayout Padding="10" >
 
-            <Entry x:Name="TxtCedula" Placeholder="Cedula" Keyboard="Text" ClearButtonVisibility="WhileEditing" >
+            <Entry x:Name="TxtFecha" Placeholder="Fecha" Keyboard="Text" ClearButtonVisibility="WhileEditing" >
                 <Entry.Triggers>
                     <Trigger TargetType="Entry" Property="IsFocused" Value="True" >
                         <Setter Property="BackgroundColor" Value="DeepSkyBlue"/>
@@ -16,7 +16,7 @@
                 </Entry.Triggers>
             </Entry>
 
-            <Entry x:Name="TxtEmail" Placeholder="Email" Keyboard="Text" ClearButtonVisibility="WhileEditing">
+            <Entry x:Name="TxtHoraS" Placeholder="Hora de salida" Keyboard="Text" ClearButtonVisibility="WhileEditing" >
                 <Entry.Triggers>
                     <Trigger TargetType="Entry" Property="IsFocused" Value="True" >
                         <Setter Property="BackgroundColor" Value="DeepSkyBlue"/>
@@ -27,7 +27,7 @@
                 </Entry.Triggers>
             </Entry>
 
-            <Entry x:Name="TxtName" Placeholder="Nombre" Keyboard="Text" ClearButtonVisibility="WhileEditing">
+            <Entry x:Name="TxtLugar" Placeholder="Lugar" Keyboard="Text" ClearButtonVisibility="WhileEditing">
                 <Entry.Triggers>
                     <Trigger TargetType="Entry" Property="IsFocused" Value="True" >
                         <Setter Property="BackgroundColor" Value="DeepSkyBlue"/>
@@ -38,7 +38,7 @@
                 </Entry.Triggers>
             </Entry>
 
-            <Entry x:Name="TxtFechaN" Placeholder="Fecha de Nacimiento" Keyboard="Text" ClearButtonVisibility="WhileEditing">
+            <Entry x:Name="TxtCosto" Placeholder="Costo" Keyboard="Text" ClearButtonVisibility="WhileEditing">
                 <Entry.Triggers>
                     <Trigger TargetType="Entry" Property="IsFocused" Value="True" >
                         <Setter Property="BackgroundColor" Value="DeepSkyBlue"/>
@@ -48,28 +48,6 @@
                     </Trigger>
                 </Entry.Triggers>
             </Entry>
-
-            <Entry x:Name="TxtTelefono" Placeholder="Telefono" Keyboard="Telephone" ClearButtonVisibility="WhileEditing">
-                <Entry.Triggers>
-                    <Trigger TargetType="Entry" Property="IsFocused" Value="True" >
-                        <Setter Property="BackgroundColor" Value="DeepSkyBlue"/>
-                        <Setter Property="TextColor" Value="WhiteSmoke"/>
-                        <Setter Property="FontSize" Value="20"/>
-                        <Setter Property="FontAttributes" Value="Bold"/>
-                    </Trigger>
-                </Entry.Triggers>
-            </Entry>
-
-            <Editor x:Name="TxtDireccion" Placeholder="Direccion" MinimumHeightRequest="0" AutoSize="TextChanges" Keyboard="Text">
-                <Editor.Triggers>
-                    <Trigger TargetType="Editor" Property="IsFocused" Value="True" >
-                        <Setter Property="BackgroundColor" Value="DeepSkyBlue"/>
-                        <Setter Property="TextColor" Value="WhiteSmoke"/>
-                        <Setter Property="FontSize" Value="20"/>
-                        <Setter Property="FontAttributes" Value="Bold"/>
-                    </Trigger>
-                </Editor.Triggers>
-            </Editor>
 
 
             <StackLayout Orientation="Horizontal" >

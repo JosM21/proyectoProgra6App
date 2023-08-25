@@ -37,13 +37,15 @@
                             x:Name="Viaje" Text="Viajes"
                             BackgroundColor="GreenYellow" TextColor="White"
                             HeightRequest="150" WidthRequest="100"
-                            CornerRadius="25" BorderColor="#B6B4B4" BorderWidth="2" />
+                            CornerRadius="25" BorderColor="#B6B4B4" BorderWidth="2"
+                            Clicked="Viaje_Clicked"/>
 
                 <Button Grid.Column="0" Grid.Row="2"
                             x:Name="Hospedaje" Text="Hospedajes"
                             BackgroundColor="#05215D" TextColor="White"
                             HeightRequest="150" WidthRequest="100"
-                            CornerRadius="25" BorderColor="#B6B4B4" BorderWidth="2"  />
+                            CornerRadius="25" BorderColor="#B6B4B4" BorderWidth="2" 
+                            Clicked="Hospedaje_Clicked"/>
 
                 <Button Grid.Column="0" Grid.Row="3"
                             x:Name="Itinerario" Text="Itinerarios"
@@ -55,13 +57,15 @@
                             x:Name="Recorrido" Text="Recorridos"
                             BackgroundColor="HotPink" TextColor="White"
                             HeightRequest="150" WidthRequest="100"
-                            CornerRadius="25" BorderColor="#B6B4B4" BorderWidth="2"  />
+                            CornerRadius="25" BorderColor="#B6B4B4" BorderWidth="2"
+                            Clicked="Recorrido_Clicked"/>
 
                 <Button Grid.Column="1" Grid.Row="1"
                             x:Name="Vuelo" Text="Vuelos"
                             BackgroundColor="CadetBlue" TextColor="White"
                             HeightRequest="150" WidthRequest="100"
-                            CornerRadius="25" BorderColor="#B6B4B4" BorderWidth="2" />
+                            CornerRadius="25" BorderColor="#B6B4B4" BorderWidth="2" 
+                            Clicked="Vuelo_Clicked"/>
 
                 <Button Grid.Column="0" Grid.Row="0"
                             x:Name="Usuarios" Text="Usuarios"

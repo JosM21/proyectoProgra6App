@@ -34,5 +34,29 @@ namespace proyectoProgra6App.Views
             await Navigation.PushAsync(new ClienteManagmentPage());
 
         }
+
+        private async void Hospedaje_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HospedajeManagmentPage());
+
+        }
+
+        private async void Recorrido_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RecorridoManagmentPage());
+
+        }
+
+        private async void Viaje_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ViajeManagmentPage());
+
+        }
+
+        private async void Vuelo_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new VueloManagmentPage());
+
+        }
     }
 }

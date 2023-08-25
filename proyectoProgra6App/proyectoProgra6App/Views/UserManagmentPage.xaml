@@ -60,6 +60,7 @@
             <StackLayout Orientation="Horizontal" >
                 <Button x:Name="BtnUpdate" Text="Apply" CornerRadius="15" BackgroundColor="DarkGreen" FontSize="20" Clicked="BtnUpdate_Clicked" />
                 <Button x:Name="BtnCancel" Text="Cancel" CornerRadius="15" BackgroundColor="Maroon" FontSize="20" Clicked="BtnCancel_Clicked" />
+                <Button x:Name="BtnVer" Text="Ver" CornerRadius="15" BackgroundColor="Maroon" FontSize="20" Clicked="BtnVer_Clicked" />
             </StackLayout>
 
 
